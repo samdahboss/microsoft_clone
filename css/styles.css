@@ -43,22 +43,25 @@ body{
     font-weight: 700;
 }
 #menu-icon{
+    width: 20px;
+    height: 10px;
     display: flex;
     flex-direction: column;
-    gap: 7px;
-    margin-bottom: 2px;
+    gap: 4px;
 }
 #navbar-toggler{
     position: absolute;
-    top: 7px;
-    right: 20px;
+    top: 15px;
+    right: 30px;
+    box-shadow: none !important;
 }
 .icon-bar {
-    border: 2px solid var(--black);
+    border: 1px solid var(--black);
     width: 100%;
 }
 /*SIDE NAV*/
 #side-nav{
+    opacity: 0.9;
     position: absolute;
     z-index: 1000;
     left: 0;
@@ -68,7 +71,6 @@ body{
     width: 50%;
     background-color: #F3F3F3;
     animation: slideIn 0.1s ease-in-out 0s 1 normal ;
-
 }
 #side-nav-ul{
     display: flex;
@@ -125,14 +127,116 @@ body{
     text-decoration: none;
 }
 /*CARDS SECTION*/
-.cr-1-products img{
+.cr-1-products,.cr-3-products{
+    margin-bottom: 1em;
+}
+.cr-1-products img, .cr-3-products img{
     width: 100%;
 }
-.cr-1-products h3{
-    font-size: 1.2em;
+.cr-1-products h3, .cr-3-products h3{
+    margin: 0.5em 0em;
+    font-size: 1.3em;
     color: var(--black);
 }
+.cr-1-products p, .cr-3-products p{
+    font-size: 1.15em;
+}
+.cr-1-products a, .cr-3-products a{
+    color: var(--blue);
+    text-decoration: none;
+}
 
+#cr-2{
+    position: relative;
+    margin-top: 3em;
+    background: url('../images/outlook.avif') no-repeat center center/cover;
+    padding-bottom: 2em;
+    margin-bottom: 1.5em;
+}
+#cr-2 div{
+    width: 50%;
+    height: 80%;
+    padding: 8em 0em 0em 2em;
+    margin-bottom: 2em;
+}
+#cr-2 button{
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 1em 1.5em;
+    font-size: 0.8em;
+    border: 0em;
+    border-radius: 0.3em;
+}
+#cr-4{
+    position: relative;
+    margin-top: 2em;
+    background: url('../images/microsoft-365-banner.webp') no-repeat center center/cover;
+    padding: 2em 0em;
+    margin-bottom: 1.5em;
+}
+#cr-4 div{
+    width: 55%;
+    height: 80%;
+    padding: 5em 0em 0em 2em;
+    margin-bottom: 2em;
+}
+#cr-4 div p{
+    font-size: 1.1em;
+}
+#cr-4 button{
+    background-color: #F3F3F3;
+    color: var(--black);
+    width: 10em;
+    padding: 0.9em 1.5em;
+    font-size: 0.8em;
+    border: 0em;
+    border-radius: 0.3em;
+}
+#cr-5{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2em 0em;
+}
+#cr-5 a img{
+    width: 2.5em;
+    margin-top: -15px;
+    margin-left: 1em;
+}
+
+/* FOOTER */
+footer{
+    background-color: #F3F3F3;
+}
+footer .container{
+    padding: 2em;
+    padding-bottom: 0em;
+}
+#footer-links{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+#footer-ul h5{
+    font-size: 0.9em;
+    font-weight: 700;
+}
+#footer-ul{
+    margin-right: 1em;
+    list-style-type: none;
+}
+#footer-ul li, #footer-ul-2 li{
+    font-size: 0.75em;
+}
+#footer-ul-2 li:not(:first-child){
+    margin-left: 2em;
+    float: left;
+}
+#footer-ul-2{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    flex-wrap: wrap;
+}
 
 
 
@@ -141,25 +245,17 @@ body{
 
 /*side-nav animation*/
 @keyframes slideIn{
-    from{
+    0%{
         width: 0;
     }
-    to{
+    100%{
         width: 40%;
-    }
-}
-@keyframes slideOut{
-    from{
-        width: 40%;
-    }
-    to{
-        width: 0%;
     }
 }
 
 
 /*MEDIA QUERIES*/
-@media (max-width:700px){
+@media (max-width:768px){
     body{
         font-size: 13px;
     }
@@ -175,6 +271,7 @@ body{
     #landing-page-text{
         color: var(--black);
         margin-top: 9em;
+        margin-left: 0em;
         width: 100%;
         padding: 0;
         text-align: center;
@@ -197,5 +294,16 @@ body{
         margin-left: 10px;
         font-size: 0.9em;
         font-weight: 900;
+    }
+    #cr-4 div{
+        width: 80%;
+    }
+    #footer-links{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 576px){
+    #footer-links{
+        grid-template-columns: 1fr;
     }
 }
